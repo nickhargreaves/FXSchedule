@@ -1,0 +1,15 @@
+{
+  "version": 1.0,
+  "name": "MozFest",
+  "description": "A FireFox OS app for the Mozilla Festival. Track sessions, get acquainted with the venue, engage participants and receive useful announcements.",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "Nick Hargreaves",
+    "url": "http://nickhargreaves.com"
+  },
+  "icons": {
+    "512": "/img/icon-512.png",
+    "128": "/img/icon-128.png"
+  },
+  "default_locale": "en"
+}
