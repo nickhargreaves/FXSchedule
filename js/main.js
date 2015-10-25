@@ -1,4 +1,4 @@
-angular.module('ui.bootstrap.mozfest', ['ngAnimate', 'ui.bootstrap']);
+angular.module('ui.bootstrap.mozfest', ['ngAnimate', 'ui.bootstrap', 'ngRoute']);
 angular.module('ui.bootstrap.mozfest').controller('AccordionCtrl', function ($scope) {
     $scope.oneAtATime = true;
 
@@ -24,4 +24,12 @@ angular.module('ui.bootstrap.mozfest').controller('AccordionCtrl', function ($sc
         isFirstOpen: true,
         isFirstDisabled: false
     };
+});
+app.config(function($routeProvider){
+    $routeProvider
+        //the timeline display
+        .when('/sessions', {
+            templateUrl: 'sessions.html',
+            controller: 'AccordionCtrl'
+        })
 });

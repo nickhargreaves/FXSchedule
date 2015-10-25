@@ -1,50 +1,24 @@
 <!doctype html>
-<html ng-app="ui.bootstrap.mozfest">
+<html>
 <head>
     <title>Spaces</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
 </head>
+
 <body>
+<body  ng-app="ui.bootstrap.mozfest">
+<div id='main' class="container">
+    <div class="col-md-offset-2 col-md-8">
+        <div ng-view>
 
-<div ng-controller="AccordionCtrl">
-
-    <script type="text/ng-template" id="group-template.html">
-        <div class="panel {{panelClass || 'panel-default'}}">
-            <div class="panel-heading">
-                <h4 class="panel-title" style="color:#fa39c3">
-                    <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span
-                            ng-class="{'text-muted': isDisabled}">{{heading}}</span></a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-                </h4>
-            </div>
-            <div class="panel-collapse collapse" uib-collapse="!isOpen">
-                <div class="panel-body" style="text-align: right" ng-transclude></div>
-            </div>
         </div>
-    </script>
-
-    <uib-accordion close-others="oneAtATime">
-
-        <uib-accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-            This content is straight in the template.
-        </uib-accordion-group>
-
-        <uib-accordion-group heading="{{group.title}}"  ng-repeat="group in groups" template-url="group-template.html" is-open="isOpen" >
-            {{group.content}}
-        </uib-accordion-group>
-
-        <uib-accordion-group is-open="status.open">
-            <uib-accordion-heading>
-                I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-            </uib-accordion-heading>
-            This is just some content to illustrate fancy headings.
-        </uib-accordion-group>
-
-    </uib-accordion>
+    </div>
 </div>
 
-<script src="lib/angular.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
 <script src="js/angular-animate.js"></script>
 <script src="js/ui-bootstrap-tpls-0.14.2.min.js"></script>
 <script src="js/main.js"></script>

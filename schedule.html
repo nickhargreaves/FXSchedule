@@ -1,0 +1,9 @@
+<div ng-controller="TabsCtrl">
+
+    <uib-tabset justified="true">
+        <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active">
+            {{tab.content}}
+        </uib-tab>
+    </uib-tabset>
+
+</div>
