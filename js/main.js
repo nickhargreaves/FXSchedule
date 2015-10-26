@@ -1,6 +1,6 @@
 var fxScheduleApp = angular.module('ui.bootstrap.mozfest', ['ngAnimate', 'ui.bootstrap', 'ngRoute']);
 
-fxScheduleApp.controller('AccordionCtrl', function ($scope) {
+fxScheduleApp.controller('SessionsCtrl', function ($scope) {
     $scope.oneAtATime = true;
 
     $scope.groups = [
@@ -27,11 +27,23 @@ fxScheduleApp.controller('AccordionCtrl', function ($scope) {
     };
 });
 
+fxScheduleApp.controller('ScheduleCtrl', function ($scope, $window) {
+    $scope.tabs = [
+        { title:'Friday 6/11', content:'Dynamic content 1' },
+        { title:'Saturday 7/11', content:'Dynamic content 2' },
+        { title:'Sunday 8/11', content:'Dynamic content 3' }
+    ];
+});
+
 fxScheduleApp.config(function($routeProvider){
     $routeProvider
         //the timeline display
         .when('/', {
             templateUrl: 'sessions.html',
-            controller: 'AccordionCtrl'
+            controller: 'SessionsCtrl'
+        })
+        .when('/schedule', {
+            templateUrl: 'schedule.html',
+            controller: 'ScheduleCtrl'
         })
 });
