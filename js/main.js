@@ -39,11 +39,11 @@ fxScheduleApp.config(function($routeProvider){
     $routeProvider
         //the timeline display
         .when('/', {
-            templateUrl: 'sessions.html',
+            templateUrl: 'pages/sessions.html',
             controller: 'SessionsCtrl'
         })
         .when('/schedule', {
-            templateUrl: 'schedule.html',
+            templateUrl: 'pages/schedule.html',
             controller: 'ScheduleCtrl'
         })
 });
