@@ -1,5 +1,6 @@
-angular.module('ui.bootstrap.mozfest', ['ngAnimate', 'ui.bootstrap', 'ngRoute']);
-angular.module('ui.bootstrap.mozfest').controller('AccordionCtrl', function ($scope) {
+var fxScheduleApp = angular.module('ui.bootstrap.mozfest', ['ngAnimate', 'ui.bootstrap', 'ngRoute']);
+
+fxScheduleApp.controller('AccordionCtrl', function ($scope) {
     $scope.oneAtATime = true;
 
     $scope.groups = [
@@ -25,10 +26,11 @@ angular.module('ui.bootstrap.mozfest').controller('AccordionCtrl', function ($sc
         isFirstDisabled: false
     };
 });
-app.config(function($routeProvider){
+
+fxScheduleApp.config(function($routeProvider){
     $routeProvider
         //the timeline display
-        .when('/sessions', {
+        .when('/', {
             templateUrl: 'sessions.html',
             controller: 'AccordionCtrl'
         })
