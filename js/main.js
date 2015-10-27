@@ -1,4 +1,4 @@
-var fxScheduleApp = angular.module('ui.bootstrap.mozfest', ['ngAnimate', 'ui.bootstrap', 'ngRoute']);
+var fxScheduleApp = angular.module('ui.bootstrap.mozfest', ['ngAnimate', 'ui.bootstrap', 'ngRoute', 'ngResource']);
 
 fxScheduleApp.controller('SessionsCtrl', function ($scope) {
     $scope.oneAtATime = true;
